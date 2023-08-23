@@ -80,3 +80,9 @@ In the app.py, the `verbose_name` variable was added, this changes the section n
     <br>
 </div>
 
+## Useful links (or alternative solutions)
+- https://docs.djangoproject.com/en/4.2/topics/auth/customizing/
+- https://www.youtube.com/watch?v=IdpwReLHrbk
+- https://djangocentral.com/authentication-using-an-email-address/
+- https://rahmanfadhil.com/django-login-with-email/
+- https://velog.io/@holawan/Django-Custom-User-Model-Test
