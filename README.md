@@ -45,7 +45,7 @@ You can now migrate the database and test the changes.
 Test it by going to http://127.0.0.1:8000/admin/
 
 > [!IMPORTANT]   
-> This repository used `users` in place of `your-app-name`. If you name your app something else, like `accounts` make sure to replace the word `users` through out your code with `accounts`.
+> This repository uses `users` as app name, instead of `your-app-name`. If your app name is different, such as `accounts`, make sure to replace all references to `users` through out your code with `accounts`.
 
 ## File changes explained
 
