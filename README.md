@@ -25,7 +25,7 @@ Create a new Django project
 (env)> python manage.py startapp your-app-name
 ```
 
-Once a default Django project has been setup you may replace the files in this repository with the files in your app `your-app-name` folder. There are 3 files to add/replace: models.py, admin.py and app.py.
+Once a default Django project has been setup you may replace the files in this repository with the files in your app `your-app-name` folder. There are 3 files to add/replace: models.py, admin.py and apps.py.
 
 Edit the your-project-name/settings.py file to include the app. But also add the new custom User model, by adding the following line at the bottom of the file `AUTH_USER_MODEL = 'your-app-name.User'`
 
@@ -44,9 +44,12 @@ You can now migrate the database and test the changes.
 
 Test it by going to http://127.0.0.1:8000/admin/
 
-_Note: this repository used `users` in place of `your-app-name`. If you name your app something else, like `accounts` make sure to replace the word `users` through out your code with `accounts`._
+> [!IMPORTANT]   
+> This repository used `users` in place of `your-app-name`. If you name your app something else, like `accounts` make sure to replace the word `users` through out your code with `accounts`.
 
-## your-app-name/models.py
+## File changes explained
+
+#### your-app-name/models.py
 
 In models.py new models are created that inherit from code Django file related to User. Changes are then made to use email instead of username for login purposes. Firstly, a new UserManager which inherits from BaseUserManager is created. The UserManager defines functions such as `create_user` which is used to create a new user with commands like `python manage.py createsuperuser`. 
 
@@ -54,12 +57,26 @@ Also a new User model is created in which the username field is no longer requir
 
 Lastly, a proxy Group model is created for display purposes in the admin panel (see below).
 
-## your-app-name/admin.py
+#### your-app-name/admin.py
 
 By creating a custom `User` model, the admin panel will place this model separately outside of _Authentication and Authorization_ section and away from the default `Group` model. This is not elegant. 
 
 Having created a `Group` proxy in models.py, we edit the admin.py. The default Group model, imported as `OldGroup`, is unregistered. While the new (proxy) Group and User models are registered together so that they will now fall under the same section in the admin panel.
 
-## your-app-name/apps.py
+#### your-app-name/apps.py
 
 In the app.py, the `verbose_name` variable was added, this changes the section name in the admin panel. By default this is named after the app name, but since the app name `Users` can easily be confused with `User` is was changed to accounts.
+
+## Sample screenshots
+<div align="center">
+    <img width="400" alt="Screenshot Django admin login" src="https://github.com/pxv8780/django-email-sign-in/assets/22942635/4d51889c-d894-47af-8310-ed7cb81cf533">
+    <p><sup>Note the former 'Username' field is now labelled as 'Email'</sup></p>
+    <br>
+</div>
+
+<div align="center">
+    <img align="center" width="600" alt="Screenshot Django admin dashboard" src="https://github.com/pxv8780/django-email-sign-in/assets/22942635/f775d8a7-3ea2-4661-9e97-69943bd38634">
+    <p><sup>Note the former 'Username' field is now labelled as 'Email'</sup></p>
+    <br>
+</div>
+
