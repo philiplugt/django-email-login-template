@@ -64,7 +64,7 @@ By creating a custom `User` model, the admin panel will place this model separat
 Having created a `Group` proxy in models.py, we edit the admin.py. The default Group model, imported as `OldGroup`, is unregistered. While the new (proxy) Group and User models are registered together so that they will now fall under the same section in the admin panel.
 
 > [!IMPORTANT]   
-> Make sure to customize your admin panel for User. Currently, new users that are created via the admin panel do not have hashed passwords, which creates cause authenticateion to fail, unless the admin panel is changed.
+> Make sure to customize your admin panel for User. Currently, new users that are created via the admin panel do not have hashed passwords, which will cause authentication to fail, unless the admin panel is changed to hash passwords of newly created users.
 
 #### your-app-name/apps.py
 
