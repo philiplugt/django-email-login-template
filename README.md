@@ -3,12 +3,10 @@ The Django framework by default uses username to sign in, changing this to email
 
 These files will make email login default. Username is now on optional field to be set in the profile. The Django admin dashboard is modified to keep Group and User under the same section.
 
-## Versioning
+### Versioning
+This code has been tried and tested with Django 4.2.4 (2023-08-23)
 
-This code has been tried and tested with Django 4.2.4 as of 23 August 23
-
-## How to use
-
+### How to use
 Create a new Django project 
 
 ```python
@@ -47,7 +45,7 @@ Test it by going to http://127.0.0.1:8000/admin/
 > [!IMPORTANT]   
 > This repository uses `users` as app name, instead of `your-app-name`. If your app name is different, such as `accounts`, make sure to replace all references to `users` through out your code with `accounts`.
 
-## File changes explained
+### File changes explained
 
 #### your-app-name/models.py
 
@@ -67,7 +65,7 @@ Having created a `Group` proxy in models.py, we edit the admin.py. The default G
 
 In the app.py, the `verbose_name` variable was added, this changes the section name in the admin panel. By default this is named after the app name, but since the app name `Users` can easily be confused with `User` is was changed to accounts.
 
-## Sample screenshots
+### Sample screenshots
 <div align="center">
     <img width="400" alt="Screenshot Django admin login" src="https://github.com/pxv8780/django-email-sign-in/assets/22942635/4d51889c-d894-47af-8310-ed7cb81cf533">
     <p><sup>Note the former 'Username' field is now labelled as 'Email'</sup></p>
@@ -80,7 +78,7 @@ In the app.py, the `verbose_name` variable was added, this changes the section n
     <br>
 </div>
 
-## Useful links (or alternative solutions)
+### Sources and useful links
 - https://docs.djangoproject.com/en/4.2/topics/auth/customizing/
 - https://www.youtube.com/watch?v=IdpwReLHrbk
   - _Code Aura - Use Email Instead of Username in Django Authentication | Email Login_
