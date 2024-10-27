@@ -27,6 +27,9 @@ Once a default Django project has been setup you may replace the files in this r
 
 Edit the your-project-name/settings.py file to include the app. But also add the new custom User model, by adding the following line at the bottom of the file `AUTH_USER_MODEL = 'your-app-name.User'`
 
+> [!NOTE]
+> The `AUTH_USER_MODEL` variable is always formatted as `app_label.ModelName`. If your users app is nested inside another folder the formatting doesn't change. Django finds your model via the `INSTALLED_APPS` setting (which must contain the correct path of your app).
+
 You can now migrate the database and test the changes.
 
 ```python
@@ -43,7 +46,7 @@ You can now migrate the database and test the changes.
 Test it by going to http://127.0.0.1:8000/admin/
 
 > [!IMPORTANT]   
-> This repository uses `users` as app name, instead of `your-app-name`. If your app name is different, such as `accounts`, make sure to replace all references to `users` through out your code with `accounts`.
+> This repository uses `users` as app name, instead of `your-app-name`. If your app name is different, such as `accounts`, make sure to replace references to `users` appropriately.
 
 ### File changes explained
 
